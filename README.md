@@ -203,3 +203,29 @@ path('', views.receita, name='receita'),
     </div>
 {% endblock %}
 ```
+<p>Crie uma pasta partials na pasta templastes no app e separe em arquivos as partes que se repetem nos arquivos se tiver, exemplos: MENU e FOOTER</p>
+
+```html
+#EXEMPLO
+{% load static %}
+ <!-- ##### Footer Area Start ##### -->
+ <footer class="footer-area">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+                <!-- Footer Social Info -->
+                <div class="footer-social-info text-right">
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <a href="{% url 'index' %}"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+```
+<p>Depois inclua com {% include 'partials/footer.html' %} aonde voce quer que fique o arquivo
